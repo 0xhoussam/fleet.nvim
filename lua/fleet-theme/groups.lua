@@ -41,7 +41,8 @@ function M.setup()
 		-- MsgSeparator = { }, -- Separator for scrolled messages, `msgsep` flag of 'display'
 		-- MoreMsg      = { }, -- |more-prompt|
 		NonText = { link = "Comment" }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
-		-- NormalFloat  = { }, -- Normal text in floating windows.
+		NormalFloat = { bg = palette.background, fg = palette.light }, -- Normal text in floating windows.
+		FloatBorder = { bg = palette.background, fg = palette.purple }, -- Normal text in floating windows.
 		-- NormalNC     = { }, -- normal text in non-current windows
 		Pmenu = { bg = palette.darker, fg = palette.light }, -- Popup menu: normal item.
 		PmenuSel = { bg = palette.selection, fg = palette.light, bold = true }, -- Popup menu: selected item.
@@ -239,6 +240,8 @@ function M.setup()
 		TSRainbowViolet = { fg = palette.purple },
 		TSRainbowCyan = { fg = palette.cyan },
 
+		-- nvim-cmp
+
 		CmpItemAbbrDeprecated = { bg = "NONE", strikethrough = true, fg = palette.dark_gray },
 		CmpItemAbbrMatch = { bg = "NONE", fg = palette.blue },
 		CmpItemAbbrMatchFuzzy = { link = "CmpIntemAbbrMatch" },
@@ -250,6 +253,17 @@ function M.setup()
 		CmpItemKindKeyword = { bg = "NONE", fg = palette.light },
 		CmpItemKindProperty = { link = "CmpItemKindKeyword" },
 		CmpItemKindUnit = { link = "CmpItemKindKeyword" },
+
+		CmpDocumentation = { link = "NormalFloat" },
+		CmpDocumentationBorder = { link = "FloatBorder" },
+		CmpCompletion = { link = "Pmenu" },
+		CmpCompletionSel = { fg = "NONE", bg = palette.dark_gray },
+		CmpCompletionBorder = { fg = palette.purple, bg = palette.dark_gray },
+		CmpCompletionThumb = { link = "PmenuThumb" },
+		CmpCompletionSbar = { link = "PmenuSbar" },
+		CmpItemAbbr = { fg = palette.light },
+		CmpItemKindDefault = { fg = palette.light },
+		CmpItemMenu = { fg = palette.light_gray },
 	}
 
 	for group, hl in pairs(config.overrides) do
