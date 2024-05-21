@@ -17,7 +17,7 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
-  "felipeagc/fleet-theme-nvim",
+  "0xhoussam/fleet.nvim",
   config = function() vim.cmd("colorscheme fleet") end
 }
 ```
