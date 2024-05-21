@@ -1,1 +1,1 @@
-require("fleet-theme").load()
+require("fleet").load()
