@@ -273,6 +273,23 @@ function M.setup()
 		RainbowDelimiterGreen = { fg = palette.green },
 		RainbowDelimiterViolet = { fg = palette.purple },
 		RainbowDelimiterCyan = { fg = palette.cyan },
+
+		-- nvimtree
+
+		NvimTreeFolderName = { fg = palette.blue },
+		NvimTreeFolderIcon = { fg = palette.blue },
+		NvimTreeNormal = { fg = palette.light },
+		NvimTreeOpenedFolderName = { fg = palette.blue },
+		NvimTreeEmptyFolderName = { fg = palette.blue },
+		NvimTreeRootFolder = { fg = palette.purple, bold = true },
+		NvimTreeSymlink = { fg = palette.pink },
+		NvimTreeStatuslineNc = { fg = palette.green_accent, bg = palette.green_accent },
+		NvimTreeGitDirty = { fg = palette.yellow },
+		NvimTreeGitNew = { fg = palette.blue },
+		NvimTreeGitDeleted = { fg = palette.red },
+		NvimTreeSpecialFile = { fg = palette.orange },
+		NvimTreeImageFile = { fg = palette.light },
+		NvimTreeOpenedFile = { fg = palette.pink },
 	}
 
 	for group, hl in pairs(config.overrides) do
