@@ -101,12 +101,12 @@ function M.setup()
 		Macro = { fg = palette.green, bold = true }, --    same as Define
 		PreCondit = { link = "Keyword" }, --  preprocessor #if, #else, #endif, etc.
 
-		Type = { fg = palette.light_blue, bold = true }, -- (preferred) int, long, char, etc.
+		Type = { fg = palette.light_blue }, -- (preferred) int, long, char, etc.
 		-- StorageClass   = { fg = "#A1B56C" }, -- static, register, volatile, etc.
 		Structure = { link = "Type" }, --  struct, union, enum, etc.
 		Typedef = { link = "Type" }, --  A typedef
 
-		Special = { fg = palette.light }, -- (preferred) any special symbol
+		Special = { fg = palette.light_blue }, -- (preferred) any special symbol NOTE: for some reason this what changes types like int in c
 		SpecialChar = { fg = palette.yellow }, --  special character in a constant
 		-- Tag            = { }, --    you can use CTRL-] on this
 		Delimiter = { fg = palette.light }, --  character that needs attention
@@ -148,7 +148,7 @@ function M.setup()
 		-- These groups are for tree-sitter:
 
 		["@attribute"] = { fg = palette.green }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-		-- ["@boolean"]            = { }, -- Boolean literals: `True` and `False` in Python.
+		["@boolean"] = { fg = palette.cyan }, -- Boolean literals: `True` and `False` in Python.
 		-- ["@character"]          = { }, -- Character literals: `'a'` in C.
 		-- ["@comment"]            = { }, -- Line comments and block comments.
 		-- ["@conditional"]        = { }, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
@@ -158,7 +158,7 @@ function M.setup()
 		["@constructor"] = { fg = palette.yellow }, -- Constructor calls and definitions: `= {}` in Lua, and Java constructors.
 		-- ["@error"]              = { }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
 		["@exception"] = { fg = palette.purple }, -- Exception related keywords: `try`, `except`, `finally` in Python.
-		-- ["@field"]              = { }, -- Object and struct fields.
+		["@field"] = { fg = palette.cyan }, -- Object and struct fields.
 		-- ["@float"]              = { }, -- Floating-point number literals.
 		["@function"] = { link = "Function" }, -- Function calls and definitions.
 		["@function.builtin"] = { fg = palette.green }, -- Built-in functions: `print` in Lua.
@@ -169,7 +169,7 @@ function M.setup()
 		-- ["@keyword.operator"]    = { }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		-- ["@keyword.return"]      = { }, -- Keywords like `return` and `yield`.
 		["@label"] = { fg = palette.yellow }, -- GOTO labels: `label:` in C, and `::label::` in Lua.
-		-- ["@method"]             = { }, -- Method calls and definitions.
+		["@method"] = { fg = palette.yellow }, -- Method calls and definitions.
 		["@namespace"] = { fg = palette.green }, -- Identifiers referring to modules and namespaces.
 		-- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
 		-- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
@@ -290,6 +290,64 @@ function M.setup()
 		NvimTreeSpecialFile = { fg = palette.orange },
 		NvimTreeImageFile = { fg = palette.light },
 		NvimTreeOpenedFile = { fg = palette.pink },
+
+		-- navic
+		NavicIconsFile = { link = "Directory" },
+		NavicIconsModule = { link = "@module" },
+		NavicIconsNamespace = { link = "@module" },
+		NavicIconsPackage = { link = "@module" },
+		NavicIconsClass = { link = "Type" },
+		NavicIconsMethod = { link = "@method" },
+		NavicIconsProperty = { link = "@property" },
+		NavicIconsField = { link = "@variable.member" },
+		NavicIconsConstructor = { link = "@constructor" },
+		NavicIconsEnum = { link = "Type" },
+		NavicIconsInterface = { link = "Type" },
+		NavicIconsFunction = { link = "Function" },
+		NavicIconsVariable = { link = "@variable" },
+		NavicIconsConstant = { link = "Constant" },
+		NavicIconsString = { link = "String" },
+		NavicIconsNumber = { link = "Number" },
+		NavicIconsBoolean = { link = "Boolean" },
+		NavicIconsArray = { link = "Type" },
+		NavicIconsObject = { link = "Type" },
+		NavicIconsKey = { link = "Identifier" },
+		NavicIconsNull = { link = "Type" },
+		NavicIconsEnumMember = { link = "Constant" },
+		NavicIconsStruct = { link = "Structure" },
+		NavicIconsEvent = { link = "Structure" },
+		NavicIconsOperator = { link = "Operator" },
+		NavicIconsTypeParameter = { link = "Type" },
+		NavicText = { fg = palette.lightest },
+		NavicSeparator = { fg = palette.purple },
+
+		-- Lazy
+		LazyProgressTodo = { fg = palette.lightest },
+
+		-- neovim
+		healthError = { fg = palette.red_error },
+		healthSuccess = { fg = palette.blue },
+		healthWarning = { fg = palette.yellow },
+
+		-- dashboard
+		DashboardShortCut = { fg = palette.cyan },
+		DashboardHeader = { fg = palette.blue },
+		DashboardCenter = { fg = palette.pink },
+		DashboardFooter = { fg = palette.blue },
+		DashboardKey = { fg = palette.orange },
+		DashboardDesc = { fg = palette.cyan },
+		DashboardIcon = { fg = palette.cyan, bold = true },
+
+		-- Telescope
+		TelescopeBorder = { fg = palette.blue_accent, bg = palette.darkest },
+        TelescopeTitle = { fg = palette.cyan },
+        TelescopeSelection = { link = "CursorLine" },
+        TelescopeSelectionCaret = { link = "CursorLineNr" },
+        TelescopeResultsClass = { link = "Structure" },
+        TelescopeResultsStruct = { link = "Structure" },
+        TelescopeResultsField = { link = "@field" },
+        TelescopeResultsMethod = { link = "Function" },
+        TelescopeResultsVariable = { link = "@variable" },
 	}
 
 	for group, hl in pairs(config.overrides) do
