@@ -1,4 +1,4 @@
-local palette = require("lua.fleet.palette").palette
+local palette = require("fleet.palette").palette
 local fleet = {}
 
 fleet.normal = {
