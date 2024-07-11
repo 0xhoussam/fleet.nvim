@@ -37,6 +37,8 @@ M.palette = {
 	warning_bg = "#4e321b",
 	info_bg = "#484849",
 	hint_bg = "#263c50",
+
+	none = "NONE",
 }
 
 return M
