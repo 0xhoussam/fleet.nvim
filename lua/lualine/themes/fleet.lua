@@ -37,7 +37,7 @@ fleet.terminal = {
 }
 
 fleet.command = {
-	a = { fg = palette.bg, bg = palette.pink, gui = "bold" },
+	a = { fg = palette.background, bg = palette.pink, gui = "bold" },
 	b = { fg = palette.pink, bg = "NONE" },
 	c = { fg = palette.light, bg = "NONE" },
 }
