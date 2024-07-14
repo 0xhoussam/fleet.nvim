@@ -85,7 +85,7 @@ function M.setup()
 		Float = { fg = palette.yellow }, --    a floating point constant: 2.3e10
 
 		Identifier = { fg = palette.light }, -- (preferred) any variable name
-		Function = { fg = palette.yellow, bold = true }, -- function name (also: methods for classes)
+		Function = { fg = palette.lightest, bold = true }, -- function name (also: methods for classes)
 
 		Keyword = { fg = palette.cyan }, --  any other keyword
 		Statement = { link = "Keyword" }, -- (preferred) any statement
@@ -106,9 +106,9 @@ function M.setup()
 		Structure = { link = "Type" }, --  struct, union, enum, etc.
 		Typedef = { link = "Type" }, --  A typedef
 
-		Special = { fg = palette.light_blue }, -- (preferred) any special symbol NOTE: for some reason this what changes types like int in c
+		Special = { fg = palette.light }, -- (preferred) any special symbol
 		SpecialChar = { fg = palette.yellow }, --  special character in a constant
-		-- Tag            = { }, --    you can use CTRL-] on this
+		Tag = { fg = palette.blue }, --    you can use CTRL-] on this
 		Delimiter = { fg = palette.light }, --  character that needs attention
 		-- SpecialComment = { }, -- special things inside a comment
 		-- Debug          = { }, --    debugging statements
@@ -147,36 +147,39 @@ function M.setup()
 
 		-- These groups are for tree-sitter:
 
-		["@attribute"] = { fg = palette.green }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
+		["@attribute"] = { fg = palette.lime }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
 		["@boolean"] = { fg = palette.cyan }, -- Boolean literals: `True` and `False` in Python.
 		-- ["@character"]          = { }, -- Character literals: `'a'` in C.
 		-- ["@comment"]            = { }, -- Line comments and block comments.
 		-- ["@conditional"]        = { }, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
-		-- ["@constant"]           = { }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
-		["@constant.builtin"] = { link = "Type" }, -- Built-in constant values: `nil` in Lua.
+		["@constant"] = { fg = palette.purple }, -- Constants identifiers. These might not be semantically constant. E.g. uppercase variables in Python.
+		-- ["@constant.builtin"] = { link = "Type" }, -- Built-in constant values: `nil` in Lua.
+		["@constant.builtin"] = { fg = palette.coral }, -- Built-in constant values: `nil` in Lua.
 		-- ["@constant.macro"]         = { }, -- Constants defined by macros: `NULL` in C.
 		["@constructor"] = { fg = palette.yellow }, -- Constructor calls and definitions: `= {}` in Lua, and Java constructors.
-		-- ["@error"]              = { }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
+		["@error"] = { fg = palette.red_error }, -- Syntax/parser errors. This might highlight large sections of code while the user is typing still incomplete code, use a sensible highlight.
 		["@exception"] = { fg = palette.purple }, -- Exception related keywords: `try`, `except`, `finally` in Python.
 		["@field"] = { fg = palette.cyan }, -- Object and struct fields.
 		-- ["@float"]              = { }, -- Floating-point number literals.
 		["@function"] = { link = "Function" }, -- Function calls and definitions.
-		["@function.builtin"] = { fg = palette.green }, -- Built-in functions: `print` in Lua.
-		["@function.macro"] = { fg = palette.green }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
-		-- ["@include"]            = { }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
+		["@function.call"] = { fg = palette.yellow },
+		["@function.builtin"] = { fg = palette.lime }, -- Built-in functions: `print` in Lua.
+		["@function.macro"] = { fg = palette.lime }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
+		["@function.method.call"] = { link = "@function.call" }, -- Macro defined functions (calls and definitions): each `macro_rules` in Rust.
+		["@include"] = { fg = palette.lime }, -- File or module inclusion keywords: `#include` in C, `use` or `extern crate` in Rust.
 		["@keyword"] = { fg = palette.cyan }, -- Keywords that don't fit into other categories.
-		-- ["@keyword.function"]    = { }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
+		["@keyword.function"] = { link = "@keyword" }, -- Keywords used to define a function: `function` in Lua, `def` and `lambda` in Python.
 		-- ["@keyword.operator"]    = { }, -- Unary and binary operators that are English words: `and`, `or` in Python; `sizeof` in C.
 		-- ["@keyword.return"]      = { }, -- Keywords like `return` and `yield`.
 		["@label"] = { fg = palette.yellow }, -- GOTO labels: `label:` in C, and `::label::` in Lua.
 		["@method"] = { fg = palette.yellow }, -- Method calls and definitions.
-		["@namespace"] = { fg = palette.green }, -- Identifiers referring to modules and namespaces.
+		["@namespace"] = { fg = palette.lightest }, -- Identifiers referring to modules and namespaces.
 		-- ["@none"]               = { }, -- No highlighting (sets all highlight arguments to `NONE`). this group is used to clear certain ranges, for example, string interpolations. Don't change the values of this highlight group.
 		-- ["@number"]             = { }, -- Numeric literals that don't fit into other categories.
 		-- ["@operator"]           = { }, -- Binary or unary operators: `+`, and also `->` and `*` in C.
 		-- ["@parameter"]          = { }, -- Parameters of a function.
 		-- ["@parameter.reference"] = { }, -- References to parameters of a function.
-		-- ["@property"]           = { }, -- Same as `["@field"]`.
+		["@property"] = { fg = palette.purple }, -- Same as `["@field"]`.
 		["@punctuation.delimiter"] = { fg = palette.light }, -- Punctuation delimiters: Periods, commas, semicolons, etc.
 		["@punctuation.bracket"] = { fg = palette.light }, -- Brackets, braces, parentheses, etc.
 		["@punctuation.special"] = { fg = palette.light }, -- Special punctuation that doesn't fit into the previous categories.
@@ -202,12 +205,15 @@ function M.setup()
 		-- ["@environment"]        = { }, -- Text environments of markup languages.
 		-- ["@environment.name"]    = { }, -- Text/string indicating the type of text environment. Like the name of a `\begin` block in LaTeX.
 		-- ["@note"]               = { }, -- Text representation of an informational note.
-		-- ["@warning"]            = { }, -- Text representation of a warning note.
+		["@warning"] = { fg = palette.yellow_accent }, -- Text representation of a warning note.
 		["@danger"] = { fg = palette.red_error }, -- Text representation of a danger note.
-		["@type"] = { fg = palette.light_blue }, -- Type (and class) definitions and annotations.
-		["@type_builtin"] = { fg = palette.cyan, bold = true }, -- Built-in types: `i32` in Rust.
+		["@type"] = { link = "Type" }, -- Type (and class) definitions and annotations.
+		["@type.builtin"] = { link = "Type" }, -- Built-in types: `i32` in Rust.
+		["@type.definition"] = { link = "Type" },
 		["@variable"] = { fg = palette.light }, -- Variable names that don't fit into other categories.
-		["@variable.builtin"] = { link = "Identifier" }, -- Variable names defined by the language: `this` or `self` in Javascript.
+		["@variable.member"] = { fg = palette.purple }, -- Variable names that don't fit into other categories.
+		-- ["@variable.builtin"] = { link = "Identifier" }, -- Variable names defined by the language: `this` or `self` in Javascript.
+		["@variable.builtin"] = { fg = palette.coral }, -- Variable names defined by the language: `this` or `self` in Javascript.
 
 		-- These groups are for the native LSP client and diagnostic system. Some
 		-- other LSP clients may use these groups, or use their own. Consult your
@@ -218,7 +224,7 @@ function M.setup()
 		["@lsp.type.decorator"] = { link = "@parameter" },
 		["@lsp.type.enum"] = { link = "@type" },
 		["@lsp.type.enumMember"] = { link = "@constant" },
-		["@lsp.type.function"] = { link = "@function" },
+		["@lsp.type.function"] = { fg = "NONE" },
 		["@lsp.type.interface"] = { link = "@keyword" },
 		["@lsp.type.macro"] = { link = "@macro" },
 		["@lsp.type.method"] = { link = "@method" },
@@ -229,8 +235,6 @@ function M.setup()
 		["@lsp.type.type"] = { link = "@type" },
 		["@lsp.type.typeParameter"] = { link = "@type.definition" },
 		["@lsp.type.variable"] = { link = "@variable" },
-
-		IndentBlanklineChar = { fg = palette.darker },
 
 		TSRainbowRed = { fg = palette.red },
 		TSRainbowYellow = { fg = palette.yellow },
@@ -278,7 +282,7 @@ function M.setup()
 
 		NvimTreeFolderName = { fg = palette.blue },
 		NvimTreeFolderIcon = { fg = palette.blue },
-		NvimTreeNormal = { fg = palette.light },
+		NvimTreeNormal = { fg = palette.light, bg = palette.darkest },
 		NvimTreeOpenedFolderName = { fg = palette.blue },
 		NvimTreeEmptyFolderName = { fg = palette.blue },
 		NvimTreeRootFolder = { fg = palette.purple, bold = true },
@@ -291,42 +295,12 @@ function M.setup()
 		NvimTreeImageFile = { fg = palette.light },
 		NvimTreeOpenedFile = { fg = palette.pink },
 
-		-- navic
-		-- NavicIconsFile = { link = "Directory" },
-		-- NavicIconsModule = { link = "@module" },
-		-- NavicIconsNamespace = { link = "@module" },
-		-- NavicIconsPackage = { link = "@module" },
-		-- NavicIconsClass = { link = "Type" },
-		-- NavicIconsMethod = { link = "@method" },
-		-- NavicIconsProperty = { link = "@property" },
-		-- NavicIconsField = { link = "@variable.member" },
-		-- NavicIconsConstructor = { link = "@constructor" },
-		-- NavicIconsEnum = { link = "Type" },
-		-- NavicIconsInterface = { link = "Type" },
-		-- NavicIconsFunction = { link = "Function" },
-		-- NavicIconsVariable = { link = "@variable" },
-		-- NavicIconsConstant = { link = "Constant" },
-		-- NavicIconsString = { link = "String" },
-		-- NavicIconsNumber = { link = "Number" },
-		-- NavicIconsBoolean = { link = "Boolean" },
-		-- NavicIconsArray = { link = "Type" },
-		-- NavicIconsObject = { link = "Type" },
-		-- NavicIconsKey = { link = "Identifier" },
-		-- NavicIconsNull = { link = "Type" },
-		-- NavicIconsEnumMember = { link = "Constant" },
-		-- NavicIconsStruct = { link = "Structure" },
-		-- NavicIconsEvent = { link = "Structure" },
-		-- NavicIconsOperator = { link = "Operator" },
-		-- NavicIconsTypeParameter = { link = "Type" },
-		-- NavicText = { fg = palette.lightest },
-		-- NavicSeparator = { fg = palette.purple },
-
 		-- Lazy
 		LazyProgressTodo = { fg = palette.lightest },
 
 		-- neovim
 		healthError = { fg = palette.red_error },
-		healthSuccess = { fg = palette.blue },
+		healthSuccess = { fg = palette.green },
 		healthWarning = { fg = palette.yellow },
 
 		-- dashboard

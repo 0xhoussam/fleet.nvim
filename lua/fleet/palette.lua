@@ -20,6 +20,8 @@ M.palette = {
 	orange = "#efb080",
 	yellow = "#e5c995",
 	red = "#CC7C8A",
+	coral = "#CC7C8A",
+	lime = "#A8CC7C",
 
 	blue_accent = "#2197F3",
 	pink_accent = "#E44C7A",
