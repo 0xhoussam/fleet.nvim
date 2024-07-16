@@ -3,6 +3,7 @@
 A port of the default theme from Jetbrains' Fleet IDE for Neovim with Treesitter support.
 
 ![screenshot](https://github.com/user-attachments/assets/565b46da-2f81-451a-bc3f-8e596b3ea60a)
+![screenshot](https://github.com/user-attachments/assets/5d886799-53c8-44df-8fd8-39353e8aaeec)
 
 Includes support for:
 
