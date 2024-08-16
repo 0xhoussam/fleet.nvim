@@ -31,9 +31,9 @@ fleet.insert = {
 }
 
 fleet.terminal = {
-	a = { fg = palette.bg, bg = palette.green, gui = "bold" },
-	b = { fg = palette.fg, bg = "NONE" },
-	c = { fg = palette.fg, bg = "NONE" },
+	a = { fg = palette.background, bg = palette.coral, gui = "bold" },
+	b = { fg = palette.background, bg = "NONE" },
+	c = { fg = palette.background, bg = "NONE" },
 }
 
 fleet.command = {
