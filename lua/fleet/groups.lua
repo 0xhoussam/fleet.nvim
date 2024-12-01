@@ -327,6 +327,19 @@ function M.setup()
 		GitSignsAdd = { fg = palette.green },
 		GitSignsChange = { fg = palette.yellow },
 		GitSignsDelete = { fg = palette.red },
+
+		BlinkCmpMenu = { link = "Pmenu" },
+		BlinkCmpMenuBorder = { fg = "NONE", bg = "NONE" },
+		BlinkCmpMenuSelection = { bg = "#23497B", fg = palette.light },
+		BlinkCmpLabel = { link = "Normal" },
+		BlinkCmpLabelDeprecated = { fg = palette.dark_gray, strikethrough = true },
+		BlinkCmpLabelMatch = { fg = palette.blue },
+		BlinkCmpDoc = { link = "NormalFloat" },
+		BlinkCmpDocBorder = { link = "BlinkCmpMenuBorder" },
+		BlinkCmpDocCursorLine = { link = "Visual" },
+		BlinkCmpSignatureHelp = { link = "NormalFloat" },
+		BlinkCmpSignatureHelpBorder = { link = "BlinkCmpMenuBorder" },
+		BlinkCmpSignatureHelpActiveParameter = { fg = palette.blue },
 	}
 
 	for group, hl in pairs(config.overrides) do
