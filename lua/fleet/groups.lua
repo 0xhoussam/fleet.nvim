@@ -13,7 +13,7 @@ function M.setup()
 		-- lCursor      = { }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
 		-- CursorIM     = { }, -- like Cursor, but used when in IME mode |CursorIM|
 		-- CursorColumn = { }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-		CursorLine = { bg = palette.darker }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+		CursorLine = { bg = "#1D2746" }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
 		Directory = { fg = palette.cyan }, -- directory names (and other special names in listings)
 		DiffAdd = { fg = palette.diff_plus }, -- diff mode: Added line |diff.txt|
 		DiffChange = { fg = palette.blue_accent }, -- diff mode: Changed line |diff.txt|
