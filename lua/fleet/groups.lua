@@ -282,7 +282,7 @@ function M.setup()
 
 		NvimTreeFolderName = { fg = palette.blue },
 		NvimTreeFolderIcon = { fg = palette.blue },
-		NvimTreeNormal = { fg = palette.light, bg = palette.darkest },
+		NvimTreeNormal = { fg = palette.light, bg = palette.background },
 		NvimTreeOpenedFolderName = { fg = palette.blue },
 		NvimTreeEmptyFolderName = { fg = palette.blue },
 		NvimTreeRootFolder = { fg = palette.purple, bold = true },
@@ -328,6 +328,7 @@ function M.setup()
 		GitSignsChange = { fg = palette.yellow },
 		GitSignsDelete = { fg = palette.red },
 
+		-- blink
 		BlinkCmpMenu = { link = "Pmenu" },
 		BlinkCmpMenuBorder = { fg = "NONE", bg = "NONE" },
 		BlinkCmpMenuSelection = { bg = "#23497B", fg = palette.light },
@@ -340,6 +341,9 @@ function M.setup()
 		BlinkCmpSignatureHelp = { link = "NormalFloat" },
 		BlinkCmpSignatureHelpBorder = { link = "BlinkCmpMenuBorder" },
 		BlinkCmpSignatureHelpActiveParameter = { fg = palette.blue },
+
+		-- bufferline
+		BufferLineFill = { bg = palette.darker },
 	}
 
 	for group, hl in pairs(config.overrides) do
