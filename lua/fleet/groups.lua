@@ -344,6 +344,9 @@ function M.setup()
 
 		-- bufferline
 		BufferLineFill = { bg = palette.darker },
+
+		-- leap
+		LeapBackdrop = { link = "Comment" },
 	}
 
 	for group, hl in pairs(config.overrides) do
