@@ -2,44 +2,47 @@ local palette = require("fleet.palette").palette
 local fleet = {}
 
 fleet.normal = {
-	a = { fg = palette.background, bg = palette.blue, gui = "bold" },
-	b = { fg = palette.blue, bg = "NONE" },
-	c = { fg = palette.light, bg = "NONE" },
+	a = { fg = palette.light, bg = palette.darker, gui = "bold" },
+	b = { fg = palette.light, bg = palette.background },
+	c = { fg = palette.light, bg = palette.background },
+	x = { fg = palette.light, bg = palette.background },
+	y = { fg = palette.light, bg = palette.background },
+	z = { fg = palette.light, bg = palette.background },
 }
 
 fleet.visual = {
 	a = { fg = palette.background, bg = palette.yellow, gui = "bold" },
-	b = { fg = palette.yellow, "NONE" },
+	-- b = { fg = palette.yellow, "NONE" },
 }
 
 fleet.inactive = {
 	a = { fg = palette.light, bg = palette.background, gui = "bold" },
-	b = { fg = palette.dark_gray, bg = "NONE" },
-	c = { fg = palette.dark_gray, bg = "NONE" },
+	-- b = { fg = palette.dark_gray, bg = "NONE" },
+	-- c = { fg = palette.dark_gray, bg = "NONE" },
 }
 
 fleet.replace = {
 	a = { fg = palette.background, bg = palette.red, gui = "bold" },
-	b = { fg = palette.red, bg = "NONE" },
-	c = { fg = palette.fg, bg = "NONE" },
+	-- b = { fg = palette.red, bg = "NONE" },
+	-- c = { fg = palette.fg, bg = "NONE" },
 }
 
 fleet.insert = {
 	a = { fg = palette.background, bg = palette.green, gui = "bold" },
-	b = { fg = palette.green, bg = "NONE" },
-	c = { fg = palette.light, bg = "NONE" },
+	-- b = { fg = palette.green, bg = "NONE" },
+	-- c = { fg = palette.light, bg = "NONE" },
 }
 
 fleet.terminal = {
 	a = { fg = palette.background, bg = palette.coral, gui = "bold" },
-	b = { fg = palette.background, bg = "NONE" },
-	c = { fg = palette.background, bg = "NONE" },
+	-- b = { fg = palette.background, bg = "NONE" },
+	-- c = { fg = palette.background, bg = "NONE" },
 }
 
 fleet.command = {
 	a = { fg = palette.background, bg = palette.pink, gui = "bold" },
-	b = { fg = palette.pink, bg = "NONE" },
-	c = { fg = palette.light, bg = "NONE" },
+	-- b = { fg = palette.pink, bg = "NONE" },
+	-- c = { fg = palette.light, bg = "NONE" },
 }
 
 return fleet
