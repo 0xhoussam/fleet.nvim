@@ -148,7 +148,7 @@ function M.setup()
 		-- These groups are for tree-sitter:
 
 		["@attribute"] = { fg = palette.lime }, -- Annotations that can be attached to the code to denote some kind of meta information. e.g. C++/Dart attributes.
-		["@boolean"] = { fg = palette.cyan }, -- Boolean literals: `True` and `False` in Python.
+		["@boolean"] = { fg = palette.yellow }, -- Boolean literals: `True` and `False` in Python.
 		-- ["@character"]          = { }, -- Character literals: `'a'` in C.
 		-- ["@comment"]            = { }, -- Line comments and block comments.
 		-- ["@conditional"]        = { }, -- Keywords related to conditionals: `if`, `when`, `cond`, etc.
@@ -210,6 +210,7 @@ function M.setup()
 		["@type"] = { link = "Type" }, -- Type (and class) definitions and annotations.
 		["@type.builtin"] = { link = "Type" }, -- Built-in types: `i32` in Rust.
 		["@type.definition"] = { link = "Type" },
+		["@type.identifier"] = { link = "Type" },
 		["@variable"] = { fg = palette.light }, -- Variable names that don't fit into other categories.
 		["@variable.member"] = { fg = palette.purple }, -- Variable names that don't fit into other categories.
 		-- ["@variable.builtin"] = { link = "Identifier" }, -- Variable names defined by the language: `this` or `self` in Javascript.
@@ -231,7 +232,7 @@ function M.setup()
 		["@lsp.type.namespace"] = { link = "@namespace" },
 		["@lsp.type.parameter"] = { link = "@parameter" },
 		["@lsp.type.property"] = { link = "@property" },
-		["@lsp.type.struct"] = { link = "@constructor" },
+		["@lsp.type.struct"] = { link = "@type" },
 		["@lsp.type.type"] = { link = "@type" },
 		["@lsp.type.typeParameter"] = { link = "@type.definition" },
 		["@lsp.type.variable"] = { link = "@variable" },
