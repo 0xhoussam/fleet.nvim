@@ -11,36 +11,36 @@ fleet.normal = {
 }
 
 fleet.visual = {
-	a = { fg = palette.background, bg = palette.yellow, gui = "bold" },
+	a = { fg = palette.light, bg = palette.darker, gui = "bold" },
 	-- b = { fg = palette.yellow, "NONE" },
 }
 
 fleet.inactive = {
-	a = { fg = palette.light, bg = palette.background, gui = "bold" },
+	a = { fg = palette.light, bg = palette.darker, gui = "bold" },
 	-- b = { fg = palette.dark_gray, bg = "NONE" },
 	-- c = { fg = palette.dark_gray, bg = "NONE" },
 }
 
 fleet.replace = {
-	a = { fg = palette.background, bg = palette.red, gui = "bold" },
+	a = { fg = palette.light, bg = palette.darker, gui = "bold" },
 	-- b = { fg = palette.red, bg = "NONE" },
 	-- c = { fg = palette.fg, bg = "NONE" },
 }
 
 fleet.insert = {
-	a = { fg = palette.background, bg = palette.green, gui = "bold" },
+	a = { fg = palette.light, bg = palette.darker, gui = "bold" },
 	-- b = { fg = palette.green, bg = "NONE" },
 	-- c = { fg = palette.light, bg = "NONE" },
 }
 
 fleet.terminal = {
-	a = { fg = palette.background, bg = palette.coral, gui = "bold" },
+	a = { fg = palette.light, bg = palette.darker, gui = "bold" },
 	-- b = { fg = palette.background, bg = "NONE" },
 	-- c = { fg = palette.background, bg = "NONE" },
 }
 
 fleet.command = {
-	a = { fg = palette.background, bg = palette.pink, gui = "bold" },
+	a = { fg = palette.light, bg = palette.darker, gui = "bold" },
 	-- b = { fg = palette.pink, bg = "NONE" },
 	-- c = { fg = palette.light, bg = "NONE" },
 }
